@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DemoApp"
+             x:Class="DemoApp.MainPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.9*" />
+            <RowDefinition Height="0.1*" />
+            <RowDefinition Height="0.1*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*" />
+            <ColumnDefinition Width="0.5*" />
+        </Grid.ColumnDefinitions>
+        <local:CustomView x:Name="customView"
+                          Grid.Row="0"
+                          Grid.ColumnSpan="2" />
+        <Button Grid.Row="1"
+                Grid.Column="0"
+                x:Name="ZoomIn"
+                Text="ZoomIn"
+                Clicked="ZoomIn_Clicked" />
+        <Button Grid.Row="1"
+                Grid.Column="1"
+                x:Name="ZoomOut"
+                Text="ZoomOut"
+                Clicked="ZoomOut_Clicked" />
+        <Slider Grid.Row="2"
+                Grid.ColumnSpan="2"
+                x:Name="slider"
+                Minimum="0.1"
+                Maximum="1"
+                Value="1"
+                ValueChanged="slider_ValueChanged" />
+    </Grid>
+</ContentPage>
